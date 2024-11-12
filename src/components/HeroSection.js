@@ -436,11 +436,6 @@ const HeroContainer = styled.div`
     padding: 4rem 3rem;
     font-family: 'Andale Mono', monospace;
     position: relative;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        padding: 2rem 1.5rem;
-    }
 `;
 
 const LeftContent = styled.div`
@@ -448,12 +443,6 @@ const LeftContent = styled.div`
     flex-direction: column;
     align-items: center;
     max-width: 40%;
-
-    @media (max-width: 768px) {
-        max-width: 100%;
-        align-items: center;
-        text-align: center;
-    }
 `;
 
 const Subtitle = styled.p`
@@ -462,12 +451,6 @@ const Subtitle = styled.p`
     position: absolute;
     top: 2rem;
     left: 3rem;
-
-    @media (max-width: 768px) {
-        font-size: 0.9rem;
-        position: static;
-        margin-bottom: 1rem;
-    }
 `;
 
 const Logo = styled.h1`
@@ -475,39 +458,24 @@ const Logo = styled.h1`
     font-weight: bold;
     color: #ffffff;
     margin-bottom: 0.5rem;
-    font-family: 'Cormorant Garamond', serif;
-
-    @media (max-width: 768px) {
-        font-size: 2.5rem;
-    }
+    font-family: 'Cormorant Garamond', serif; /* Apply the Cormorant Garamond font */
 `;
 
 const JoinButton = styled.button`
     background-color: #6f6b58;
     color: #ffffff;
     border: none;
-    font-family: 'Andale Mono', monospace;
     padding: 0.65rem 1.5rem;
-    font-size: 0.85rem;
+    font-size: .85rem;
     cursor: pointer;
     border-radius: 12px;
     margin-bottom: 2rem;
-
-    @media (max-width: 768px) {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.8rem;
-    }
 `;
 
 const IconsContainer = styled.div`
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-
-    @media (max-width: 768px) {
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
 `;
 
 const IconWrapper = styled.div`
@@ -517,22 +485,12 @@ const IconWrapper = styled.div`
     transition: transform 0.3s, filter 0.3s;
     width: 45px;
     height: 22px;
-
-    @media (max-width: 768px) {
-        width: 35px;
-        height: 18px;
-    }
 `;
 
 const FooterText = styled.p`
     font-size: 0.9rem;
     color: #ffffff;
     margin-top: 10rem;
-
-    @media (max-width: 768px) {
-        margin-top: 2rem;
-        font-size: 0.8rem;
-    }
 `;
 
 const ImageContainer = styled.div`
@@ -542,12 +500,6 @@ const ImageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media (max-width: 768px) {
-        width: 100%;
-        height: auto;
-        margin-top: 1rem;
-    }
 `;
 
 const CategoryImage = styled.img`
@@ -556,11 +508,6 @@ const CategoryImage = styled.img`
     height: 150px;
     object-fit: contain;
     transition: opacity 0.5s ease-in-out;
-
-    @media (max-width: 768px) {
-        width: 75px;
-        height: 100px;
-    }
 `;
 
 const CentralLogo = styled.img`
@@ -568,12 +515,9 @@ const CentralLogo = styled.img`
     height: auto;
     position: relative;
     z-index: 2;
-
-    @media (max-width: 768px) {
-        width: 120px;
-    }
 `;
 
+// Function to calculate radial positions around the central logo
 const calculateRadialPositions = (radius, count) => {
     const angleStep = (2 * Math.PI) / count;
     return Array.from({ length: count }, (_, i) => ({
@@ -610,7 +554,7 @@ const HeroSection = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [activeCategory]);
+    }, [activeCategory, categories]); // Updated dependency array
 
     const displayedImages = activeCategory ? categories[activeCategory] : [];
     const positions = calculateRadialPositions(35, displayedImages.length);
@@ -654,7 +598,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
-
-
