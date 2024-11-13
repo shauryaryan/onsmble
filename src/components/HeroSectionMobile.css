@@ -1,0 +1,69 @@
+/* Styles for screens smaller than 768px (typical mobile devices) */
+@media (max-width: 768px) {
+    /* Adjust the hero container to be more vertically stacked on mobile */
+    .hero-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        height: auto;
+        align-items: center;
+    }
+
+    .left-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        top: 1rem;
+        left: 0;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .join-button {
+        font-family: 'Andale Mono', monospace; /* Ensuring Andale Mono font for mobile */
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .icons-container {
+        justify-content: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .icon-wrapper {
+        width: 35px;
+        height: 18px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .category-image {
+        width: 60px;
+        height: 90px;
+    }
+
+    .central-logo {
+        width: 100px;
+        height: auto;
+    }
+}
